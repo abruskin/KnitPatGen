@@ -24,10 +24,7 @@ function LandingPage() {
           </p>
   
           <h2> I'd like to make a...</h2> 
-         
-         
-  
- 
+        
       </div>
     );
   }
