@@ -2,7 +2,11 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { useState } from 'react';
 import { getMouseEventOptions } from '@testing-library/user-event/dist/utils';
 
-const PatternItemDropdown = ({placeHolder, options}) => {
+const PatternItemDropdown = ({placeHolder}) => {
+  const options = [
+    {value: "Hat", label: "Hat"},
+    {value: "Not a Hat", label: "Not a Hat"}
+  ]
   const [selectedValue, setSelectedValue] = useState(null);
  
   const getDisplay = () => {
@@ -22,6 +26,8 @@ const PatternItemDropdown = ({placeHolder, options}) => {
     }
     return selectedValue.value ===option.value;
   }
+
+
   return (
     <Dropdown>
       <Dropdown.Toggle variant="primary" id="dropdown-basic" >{getDisplay()}

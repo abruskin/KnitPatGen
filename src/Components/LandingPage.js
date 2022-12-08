@@ -1,16 +1,16 @@
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react';
 import PatternItemDropdown from './PatternItemDropdown';
+import {useDispatch, useSelector} from 'react-redux';
+import projectTypeSlice, { selectProjectType } from '../reducers/projectTypeSlice';
 
 
 function LandingPage() {
-    const options = [
-      {value: "Hat", label: "Hat"},
-      {value: "Not a Hat", label: "Not a Hat"}
-    ]
+    
    // const [projectType, setProjectType] = useState("")
-    
-    
+    //const projectType = useSelector((state)=> state.selectedValue.value)
+    const dispatch=useDispatch()
+  
   
     return (
       <div>
@@ -24,8 +24,8 @@ function LandingPage() {
           </p>
   
           <h2> I'd like to make a...</h2> 
-          <PatternItemDropdown placeHolder="Choose a thing..." options={options}></PatternItemDropdown>
-          <Button variant="warning" > Next </Button>
+         
+         
   
  
       </div>
