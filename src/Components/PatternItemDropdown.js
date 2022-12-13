@@ -1,16 +1,23 @@
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useState } from 'react';
-import { getMouseEventOptions } from '@testing-library/user-event/dist/utils';
+
+import { Button, Container } from 'react-bootstrap';
+import DropdownItem from 'react-bootstrap/esm/DropdownItem';
+import HatStyleSelector from './HatStyleSelector';
 
 const PatternItemDropdown = ({placeHolder}) => {
-  const options = [
-    {value: "Hat", label: "Hat"},
-    {value: "Not a Hat", label: "Not a Hat"}
-  ]
-  const [selectedValue, setSelectedValue] = useState(null);
  
+  const [selectedValue, setSelectedValue] = useState(null);
+  
+  const options = [
+    {label:"Hat", value: "Hat"},
+    {label:"Not a hat", value: "Not a Hat"}
+  ]
+
+
   const getDisplay = () => {
     if (selectedValue) {
+      console.log('changing placeholder value')
       return selectedValue.label;
     }
     return placeHolder
@@ -18,19 +25,16 @@ const PatternItemDropdown = ({placeHolder}) => {
 
   const onItemClick = (option) => {
     setSelectedValue(option)
+    console.log(selectedValue)
   }
 
-  const isSelected = (option) => {
-    if (!selectedValue) {
-      return false;
-    }
-    return selectedValue.value ===option.value;
-  }
-
-
+  
   return (
+    <Container> 
     <Dropdown>
-      <Dropdown.Toggle variant="primary" id="dropdown-basic" >{getDisplay()}
+      <Dropdown.Toggle variant="primary" id="dropdown-basic" 
+      onChange={e => setSelectedValue(e.target.value)}
+      >{getDisplay()}
         
       </Dropdown.Toggle>
 
@@ -38,13 +42,21 @@ const PatternItemDropdown = ({placeHolder}) => {
        {options.map((option) => (
         <div 
         onClick={() => onItemClick(option)}
-        key={option.value} className={`dropdown-item ${isSelected(option) && "selected"}`}
+        key={option.value} 
         > 
         {option.label}
+        
         </div>
-       ))}
+       ))} 
+       
       </Dropdown.Menu>
+      
+      
     </Dropdown>
+    {selectedValue === "Hat" ? <HatStyleSelector /> :<div />}
+    </Container>
+
+    
 
   )}
 

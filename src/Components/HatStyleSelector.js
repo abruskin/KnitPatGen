@@ -1,17 +1,34 @@
-import ButtonGroup from 'react-bootstrap/ButtonGroup'
+
+import { useState } from 'react'
 import Container from 'react-bootstrap/Container'
-import Button from 'react-bootstrap/Button'
 
-const HatStyleSelector = () => {
+import BeanieToque from './BeanieToque'
+import BeretTam from './BeretTam'
 
-    return 
+
+function HatStyleSelector()  {
+
+    const hatOptions = ["make a selection","beanie/toque", "beret/tam" ]
+    const [hatStyle, setHatStyle] = useState(hatOptions[0])
+
+    return ( 
     <Container> 
     <h2> What kind of hat would you like to make?</h2>
-    <ButtonGroup>
-    <Button variant="primary">Beanie / Toque</Button>
-    <Button variant="primary">Beret / Tam</Button>
-    </ButtonGroup>
+     <form> 
+        <select
+        value={hatStyle}
+        onChange={e => setHatStyle(e.target.value)}> 
+        {hatOptions.map((value) => (
+            <option value={value} key={value}>{value}</option>
+        ))}
+        </select>
+        
+        </form>
+
+        {hatStyle === "beanie/toque" ? <BeanieToque /> :<div />}
+        {hatStyle === "beret/tam" ? <BeretTam /> : <div />}
     </Container>
+    )
 }
 
 export default HatStyleSelector
