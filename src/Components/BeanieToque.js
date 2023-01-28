@@ -13,22 +13,26 @@ function BeanieToque() {
         
 <h1> Style & Sizing Decisions</h1>
 <form> 
-<label>What size would you like your hat to be?
+<label>Which option best matches the head circumference of the intended recipient ?
 <select> 
-<option value="15">preemie (15 in / 38 cm)</option>
-<option value="16.5">0-6 months ( 16.5 in / 42 cm)</option>
-<option value="18.5">6-18 months ( 18.5 in / 47 cm)</option>
-<option value="20">18 months - 4 years ( 20 in / 51 cm)</option>
-<option value="21">4 years - adult small ( 21 in / 53.5 cm)</option>
-<option value="23"> adult medium/large (23 in / 58.5 cm)</option>
+<option value="12-13">preemie (12-13 in / 30-33 cm)</option>
+<option value="13-14">newborn-3 months ( 13-14 in / 33-36 cm)</option>
+<option value="14-15"> 3-6 months ( 14-15 in / 36-40.5 cm) </option>
+<option value="16-17"> 6-12 months (16-17 in / 40.5-43.5 cm)</option>
+<option value="17-18">12-24 months ( 17-18 in / 43.5-46 cm)</option>
+<option value="18-19"> toddler ( 18-19 in / 46-48.5 cm)</option>
+<option value="19-20">child ( 19-20 in / 48.5-51 cm)</option>
+<option value="20-21"> adult small (20-21 in / 51-53.5cm) </option>
+<option value="22"> adult medium (22 in / 56 cm) </option>
+<option value="23"> adult large (23 in / 59 cm)</option>
 </select>
 </label>
 
 <label> What kind of edge would you like?
 <select>
 <option value="ribbed">Ribbed</option>
-<option value="rolled">Ribbed</option>
-<option value="hemmed">Ribbed</option>
+<option value="rolled">Rolled</option>
+<option value="hemmed">Hemmed</option>
 </select> </label>
 <button>Submit</button>
 </form>
