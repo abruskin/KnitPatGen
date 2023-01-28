@@ -1,15 +1,15 @@
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react';
-import PatternItemDropdown from './PatternItemDropdown';
-import {useDispatch, useSelector} from 'react-redux';
-import projectTypeSlice, { selectProjectType } from '../reducers/projectTypeSlice';
+
+//import {useDispatch, useSelector} from 'react-redux';
+//import projectTypeSlice, { selectProjectType } from '../reducers/projectTypeSlice';
 
 
 function LandingPage() {
     
    // const [projectType, setProjectType] = useState("")
     //const projectType = useSelector((state)=> state.selectedValue.value)
-    const dispatch=useDispatch()
+    //const dispatch=useDispatch()
   
   
     return (
