@@ -9,12 +9,9 @@ import LandingPage from './Components/LandingPage';
 
 import HatStyleSelector from './Components/HatStyleSelector';
 import DropdownForm from './Components/PatternItemDropdown2';
-
+import Swatch from './Components/Swatch';
 function App() {
   
-// {selectedValue === "Hat" ? <HatStyleSelector /> :<div />}
-
-
 
   return (
     <Container>
@@ -22,6 +19,8 @@ function App() {
        <LandingPage/>
        
        <DropdownForm />
+
+       <Swatch/>
 
 
      
